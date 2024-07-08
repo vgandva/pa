@@ -28,12 +28,6 @@
             background-color:  rgba(255,255,255,0.5);
         }
     </style>    
-    <script type="text/javascript">
-        // Disable right-click context menu
-        document.addEventListener("contextmenu", function(event) {
-            event.preventDefault();
-        });
-    </script>
 </head>
 <body>
 <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
@@ -53,6 +47,13 @@
     
         window.addEventListener("load", function() {
             pano.readConfigUrlAsync("pano.xml");
+        });
+
+        // Disable right-click context menu after the page content has loaded
+        window.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("contextmenu", function(event) {
+                event.preventDefault();
+            });
         });
     </script>
     <noscript>
