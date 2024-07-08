@@ -29,8 +29,8 @@
         }
     </style>    
 </head>
-<body>
-<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
+<body oncontextmenu="return false;">
+    <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - -->
     <script type="text/javascript" src="pano2vr_player.js"></script>
     <script type="text/javascript" src="skin.js"></script>
     <script src="webxr/three.min.js"></script>
@@ -40,26 +40,18 @@
     </div>
     <script type="text/javascript">
         // create the panorama player with the container
-        pano = new pano2vrPlayer("container");
+        pano=new pano2vrPlayer("container");
         // add the skin object
-        skin = new pano2vrSkin(pano);
+        skin=new pano2vrSkin(pano);
         // load the configuration
-    
         window.addEventListener("load", function() {
             pano.readConfigUrlAsync("pano.xml");
-        });
-
-        // Disable right-click context menu after the page content has loaded
-        window.addEventListener("DOMContentLoaded", function() {
-            document.addEventListener("contextmenu", function(event) {
-                event.preventDefault();
-            });
         });
     </script>
     <noscript>
         <p><b>Please enable Javascript!</b></p>
     </noscript>
-<!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - --> 
+    <!-- - - - - - - 8<- - - - - - cut here - - - - - 8<- - - - - - - --> 
     <!-- Hack needed to hide the url bar on iOS 9, iPhone 5s --> 
     <div style="width:1px;height:1px;"></div>
 </body>
